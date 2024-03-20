@@ -3,12 +3,14 @@ function encriptar() {
 
    // Verificar si hay mayúsculas en el texto 
    if (/[A-Z]/.test(texto)) {
-    alert("Este encriptador no acepta mayúsculas");
+    alert("Este encriptador no acepta mayúsculas"); 
+    document.getElementById("inputTexto").value = "";
     return; // Salir de la función si hay mayúsculas
 }
 
   if (/[^a-zA-Z\s]/.test(texto)) {
     alert("Este encriptador no acepta caracteres especiales");
+    document.getElementById("inputTexto").value = ""; 
     return; // Salir de la función si hay caracteres especiales
 }
 
@@ -30,11 +32,11 @@ function encriptar() {
 
 function desencriptar() {
   var texto = document.getElementById("inputTexto").value.toLowerCase();
-  var txtcifrado = texto.replace(/enter/igm,"e");
-  var txtcifrado = txtcifrado.replace(/ober/igm,"o");
-  var txtcifrado = txtcifrado.replace(/imes/igm,"i");
+  var txtcifrado = texto.replace(/ufat/igm,"u");
   var txtcifrado = txtcifrado.replace(/ai/igm,"a");
-  var txtcifrado = txtcifrado.replace(/ufat/igm,"u");
+  var txtcifrado = txtcifrado.replace(/imes/igm,"i");
+  var txtcifrado = txtcifrado.replace(/ober/igm,"o");
+  var txtcifrado = txtcifrado.replace(/enter/igm,"e");
   document.getElementById("imagenDerecha").style.display = "none";
   document.getElementById("texto1").style.display = "none";
   document.getElementById("copiar").style.display = "show";
@@ -48,6 +50,6 @@ function copiar() {
   contenido.select();
   document.execCommand('copy');
   alert("Texto copiado");
-
+  document.getElementById("inputTexto").value = ""; 
 }
 
