@@ -1,22 +1,18 @@
 function encriptar() {
   var texto = document.getElementById("inputTexto").value;
 
-   // Verificar si hay mayúsculas en el texto 
    if (/[A-Z]/.test(texto)) {
     alert("Este encriptador no acepta mayúsculas"); 
     document.getElementById("inputTexto").value = "";
-    return; // Salir de la función si hay mayúsculas
+    return; 
 }
 
   if (/[^a-zA-Z\s]/.test(texto)) {
     alert("Este encriptador no acepta caracteres especiales");
     document.getElementById("inputTexto").value = ""; 
-    return; // Salir de la función si hay caracteres especiales
+    return; 
 }
 
-  //i es para que afecte a tanto mayus como minus
-  //g afecta a toda la linea
-  //m afecta a multiples lineas
   var txtcifrado = texto.replace(/e/igm,"enter");
   var txtcifrado = txtcifrado.replace(/o/igm,"ober");
   var txtcifrado = txtcifrado.replace(/i/igm,"imes");
